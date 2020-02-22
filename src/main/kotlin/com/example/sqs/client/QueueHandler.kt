@@ -4,10 +4,11 @@ import com.amazonaws.services.sqs.model.CreateQueueRequest
 import com.amazonaws.services.sqs.model.MessageAttributeValue
 import com.amazonaws.services.sqs.model.SendMessageRequest
 import com.amazonaws.services.sqs.model.SendMessageResult
+import java.util.*
 
 private val attribute: MutableMap<String, String> = mutableMapOf()
 private val messageAttributes: MutableMap<String, MessageAttributeValue> = mutableMapOf()
-private val createQueueRequest: CreateQueueRequest = CreateQueueRequest("first-queue.fifo").withAttributes(attribute)
+private val createQueueRequest: CreateQueueRequest = CreateQueueRequest("api-queue.fifo").withAttributes(attribute)
 
 fun main(args: Array<String>) {
 
@@ -17,24 +18,29 @@ fun main(args: Array<String>) {
     try {
         val queueUrl: String = SqsInitializer.amazonSQS.createQueue(createQueueRequest).queueUrl
 
-        println("キューにメッセージを送信します。")
+        println("${concatThreadInfo()} : キューにメッセージを送信します。")
 
         val sendMessageFifoQueue: SendMessageRequest = SendMessageRequest()
             .withQueueUrl(queueUrl)
-            .withMessageBody("client first message")
+            .withMessageBody("Kotlinクライアントからのメッセージです。")
             .withMessageGroupId("group-1")
             .withMessageDeduplicationId("group-1")
             .withMessageAttributes(messageAttributes)
 
         val sendMessageResult: SendMessageResult = SqsInitializer.amazonSQS.sendMessage(sendMessageFifoQueue)
 
-        println("キューにメッセージを送信しました。")
+        println("${concatThreadInfo()} : キューにメッセージの送信処理を実行しました。")
 
         val sequenceNumber = sendMessageResult.sequenceNumber
         val messageId = sendMessageResult.messageId
-        println("SendMessage succeed with messageId $messageId, sequence number $sequenceNumber")
+        println("${concatThreadInfo()} : SendMessage succeed with messageId $messageId, sequence number $sequenceNumber")
     } catch (e: Exception) {
         println("error occurred ... $e.message")
         e.printStackTrace()
     }
 }
+
+/**
+ * リクエスト実行情報。
+ */
+fun concatThreadInfo(): String = "${Date().time} [ ${Thread.currentThread().name} ] $APP_NAME ${Throwable().stackTrace[0].className}#${Throwable().stackTrace[1].methodName}"

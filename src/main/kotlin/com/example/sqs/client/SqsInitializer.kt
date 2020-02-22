@@ -6,11 +6,26 @@ import com.amazonaws.auth.profile.ProfileCredentialsProvider
 import com.amazonaws.services.sqs.AmazonSQS
 import com.amazonaws.services.sqs.AmazonSQSClientBuilder
 
+/**
+ * アプリケーション名
+ */
+const val APP_NAME: String = "sqs-client"
+
+/**
+ * AWSアカウントプロファイル名。
+ */
+const val AWS_PROFILE_NAME: String = "snozaki-private"
+
+/**
+ * SQSインスタンス初期化クラス。
+ */
 class SqsInitializer {
 
     companion object Sqs {
-        private var basicAWSCredentials: AWSCredentials = ProfileCredentialsProvider("profile snozaki-private").credentials
+        // a credential with a local profile
+        private var basicAWSCredentials: AWSCredentials = ProfileCredentialsProvider(AWS_PROFILE_NAME).credentials
 
+        // build a SQS client
         val amazonSQS: AmazonSQS = AmazonSQSClientBuilder
             .standard()
             .withCredentials(AWSStaticCredentialsProvider(basicAWSCredentials))
