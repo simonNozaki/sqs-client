@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="api-queue-gateway-0.0.1-all">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/api-queue-gateway-0.0.1-all.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

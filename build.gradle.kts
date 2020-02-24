@@ -14,11 +14,19 @@ java {
 
 repositories {
     mavenCentral()
+    maven("https://maven.pkg.github.com/simonNozaki/api-queue-gateway-sdk") {
+        name = "github"
+        credentials {
+            username = findProperty("GITHUB_USER").toString()
+            password = findProperty("GITHUB_TOKEN").toString()
+        }
+    }
 }
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("com.amazonaws:aws-java-sdk-sqs:1.11.722")
+    implementation("com.example.apigateway:api-queue-gateway-sdk:1.0.0")
     testCompile("junit:junit:4.12")
 }
 

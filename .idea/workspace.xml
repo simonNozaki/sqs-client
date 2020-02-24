@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c57edece-1253-4c08-b475-7e0736582273" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/api_queue_gateway_0_0_1_all.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/ApiClient.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/ApiClientBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/PrintHelper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/QueueHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/QueueHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/SqsInitializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/sqs/client/SqsInitializer.kt" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +63,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Class" />
+        <option value="package-info" />
+        <option value="Kotlin Interface" />
       </list>
     </option>
   </component>
@@ -64,23 +72,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XpXc5VVceY7W9HPxGThyMdVmH2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15410669" />
+    <property name="project.structure.side.proportion" value="0.35144508" />
   </component>
   <component name="RunManager">
     <configuration name="com.example.sqs.client.QueueHandlerKt" type="JetRunConfigurationType" factoryName="Kotlin" temporary="true" nameIsGenerated="true">
@@ -113,6 +114,14 @@
       <option name="presentableId" value="Default" />
       <updated>1581744085787</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lambda呼び出し用FIFOキュー呼び出しに対応">
+      <created>1582361071516</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582361071516</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -120,10 +129,38 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lambda呼び出し用FIFOキュー呼び出しに対応" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lambda呼び出し用FIFOキュー呼び出しに対応" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1878" height="289" key="GridCell.Tab.0.bottom" timestamp="1582514706706">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="289" key="GridCell.Tab.0.bottom/74.23.1606.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1582514706706" />
+    <state width="1878" height="289" key="GridCell.Tab.0.center" timestamp="1582514706705">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="289" key="GridCell.Tab.0.center/74.23.1606.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1582514706705" />
+    <state width="1878" height="289" key="GridCell.Tab.0.left" timestamp="1582514706704">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="289" key="GridCell.Tab.0.left/74.23.1606.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1582514706704" />
+    <state width="1878" height="289" key="GridCell.Tab.0.right" timestamp="1582514706705">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state width="1878" height="289" key="GridCell.Tab.0.right/74.23.1606.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1582514706705" />
+    <state x="2128" y="133" key="SettingsEditor" timestamp="1582510054667">
+      <screen x="1680" y="23" width="1920" height="1057" />
+    </state>
+    <state x="2128" y="133" key="SettingsEditor/74.23.1606.1027/1680.23.1920.1057@1680.23.1920.1057" timestamp="1582510054667" />
   </component>
 </project>
